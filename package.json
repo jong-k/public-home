@@ -1,0 +1,30 @@
+{
+  "name": "markdown-parser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jong-k/markdown-parser.git",
+  "author": "jong-k <kjhan710@naver.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^13.4.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@next/eslint-plugin-next": "^13.4.7",
+    "@types/node": "^20.3.2",
+    "@types/react": "^18.2.14",
+    "eslint": "^8.43.0",
+    "eslint-config-next": "^13.4.7",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
+  }
+}
