@@ -1,8 +1,7 @@
 {
-  "name": "markdown-parser",
+  "name": "learning-react",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/jong-k/markdown-parser.git",
   "author": "jong-k <kjhan710@naver.com>",
   "license": "MIT",
   "private": true,

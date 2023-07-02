@@ -1,7 +1,1 @@
-# markdown-parser
-> 직접 만들어본 마크다운을 HTML로 파싱해주는 라이브러리
-
-## 기능
-- 마크다운 작성 및 미리보기 가능
-
-## 사용법
+# learning react
