@@ -4,4 +4,62 @@
     <NuxtPage />
   </NuxtLayout>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useSeoMeta({
+  title: "Public Home",
+  description: "My public homepage",
+  ogTitle: "Public Home",
+  ogDescription: "My public homepage",
+  // ogImage: "[og:image]",
+  // ogUrl: "[og:url]",
+  // twitterTitle: "[twitter:title]",
+  // twitterDescription: "[twitter:description]",
+  // twitterImage: "[twitter:image]",
+  // twitterCard: "summary",
+});
+
+useHead({
+  htmlAttrs: {
+    lang: "ko",
+  },
+  link: [
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.ico",
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.googleapis.com",
+    },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossorigin: "",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Gothic+Coding&display=swap",
+      crossorigin: "",
+    },
+  ],
+});
+</script>
+
+<style>
+.nanum-gothic-regular {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nanum-gothic-coding-regular {
+  font-family: "Nanum Gothic Coding", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+}
+</style>
