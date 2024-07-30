@@ -6,7 +6,7 @@
     <section v-else>
       <ul class="grid gird-cols-1 gap-4">
         <li
-          v-for="repository in data"
+          v-for="repository in repos"
           :key="repository.id"
           class="border border-gray-200 rounded-sm p-4 hover:bg-gray-200 nanum"
         >
@@ -28,5 +28,10 @@ const { error, status, data } = await useFetch(
   "https://api.github.com/users/jong-k/repos",
 );
 const pending = status.value === "pending";
-console.log(data.value);
+
+const repos = computed(() =>
+  data.value
+    .filter((repo) => repo.description)
+    .sort((a, b) => b["stargazers_count"] - a["stargazers_count"]),
+);
 </script>
