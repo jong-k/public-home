@@ -1,8 +1,8 @@
 <template>
   <div>
     <p class="mb-10">Github Projects</p>
-    <section v-if="pending">Loading...</section>
-    <section v-else-if="error">Something went wrong... Try again!</section>
+    <section v-if="status === 'pending' || status === 'idle'">Loading...</section>
+    <section v-else-if="status === 'error'">Something went wrong... Try again!</section>
     <section v-else>
       <ul class="grid gird-cols-1 gap-4">
         <li
@@ -24,10 +24,12 @@
 </template>
 
 <script setup lang="ts">
-const { error, status, data } = await useFetch(
-  "https://api.github.com/users/jong-k/repos",
-);
-const pending = status.value === "pending";
+const { status, data } = await useFetch("https://api.github.com/users/jong-k/repos", {
+  // 로딩중 UI 확인하고 싶을 때
+  // server: false,
+  // timeout: 3000,
+});
+console.log(status.value);
 
 const repos = computed(() =>
   data.value
