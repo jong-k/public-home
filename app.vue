@@ -45,21 +45,3 @@ useHead({
   ],
 });
 </script>
-
-<style>
-.nanum-gothic-regular {
-  font-family: "Nanum Gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.nanum-gothic-coding-regular {
-  font-family: "Nanum Gothic Coding", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-body {
-  font-family: "Nanum Gothic", sans-serif;
-}
-</style>

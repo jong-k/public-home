@@ -6,9 +6,7 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
-
-<script setup>
+<script setup lang="ts">
 // const enableDefaultLayout = () => {
 //   setPageLayout("default");
 // };

@@ -8,7 +8,7 @@
         <li
           v-for="repository in repos"
           :key="repository.id"
-          class="border border-gray-200 rounded-sm p-4 hover:bg-gray-200 nanum"
+          class="border border-gray-200 rounded-sm p-4 hover:bg-gray-200"
         >
           <a :href="repository['html_url']" target="_blank">
             <div class="flex items-center justify-between text-sm">
@@ -29,7 +29,6 @@ const { status, data } = await useFetch("https://api.github.com/users/jong-k/rep
   // server: false,
   // timeout: 3000,
 });
-console.log(status.value);
 
 const repos = computed(() =>
   data.value
