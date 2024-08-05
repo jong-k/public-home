@@ -3,7 +3,7 @@
     <header class="flex justify-between items-center mt-5">
       <div class="flex items-center space-x-9">
         <div>
-          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-200"
+          <NuxtLink to="/" class="text-xl font-semibold p-2 hover:bg-gray-500"
             >김종한</NuxtLink
           >
         </div>

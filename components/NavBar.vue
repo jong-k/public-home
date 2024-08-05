@@ -20,6 +20,6 @@
 <!-- scoped: 해당 컴포넌트에만 적용되는 스타일 -->
 <style scoped>
 .link {
-  @apply p-1 hover:bg-gray-200;
+  @apply p-1 hover:bg-gray-500;
 }
 </style>

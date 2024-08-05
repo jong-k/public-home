@@ -4,7 +4,7 @@
       Change to {{ COLOR_MODES[nextColorModeIdx].name }}
     </div>
     <button
-      class="hover:bg-gray-100 dark:hover:bg-gray-600 px-2 py-1 text-gray-500"
+      class="hover:bg-gray-100 dark:hover:bg-gray-500 px-2 py-1 text-gray-500"
       @click="toggleColorMode"
       @mouseenter="showNextColorModeLabel = true"
       @mouseleave="showNextColorModeLabel = false"
