@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Rule: Prefer `cn()` for Tailwind CSS class management
+
+## ✅ Do This
+
+- Use the `cn` function to compose class names, especially when dealing with conditional classes or multiple utility classes.
+
+<example>
+
+```tsx
+import { cn } from "@/lib/utils";
+
+function Button({ isActive }: { isActive: boolean }) {
+  return (
+    <button className={cn("px-4", "py-2", isActive && "bg-blue-500")}>Click me</button>
+  );
+}
+```
+</example>
+
+[utils.ts](mdc:src/lib/utils.ts)
