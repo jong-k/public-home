@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={cn(geistSans.variable, geistMono.variable, "antialiased")}>
         <AppHeader />
-        <main className={cn("px-8", "py-16")}>{children}</main>
+        <main className={cn("px-8", "py-20")}>{children}</main>
         <Toaster />
       </body>
     </html>
