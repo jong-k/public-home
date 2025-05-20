@@ -14,4 +14,4 @@ jobs:
         uses: pozil/auto-assign-issue@v2
         with:
           assignees: jong-k
-          numOfAssignees: 1
+          numOfAssignee: 1
