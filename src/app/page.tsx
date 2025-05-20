@@ -1,7 +1,11 @@
+import PostCard from "./components/PostCard";
+
 export default function Home() {
   return (
-    <div className="m-10 text-2xl font-bold italic">
-      <h1>haha</h1>
+    <div>
+      {Array.from({ length: 100 }).map((_, index) => (
+        <PostCard key={index} />
+      ))}
     </div>
   );
 }
