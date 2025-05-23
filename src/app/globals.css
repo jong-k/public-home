@@ -49,6 +49,7 @@
   --breakpoint-xl: var(--breakpoint-xl);
   /* page margin */
   --spacing-page: var(--page-margin);
+  --spacing-post: calc(var(--post-max-width) + var(--page-margin) * 2);
 }
 
 :root {
@@ -91,6 +92,8 @@
   --breakpoint-xl: 1440px;
   /* page margin */
   --page-margin: 0;
+  /* max width */
+  --post-max-width: 900px;
 }
 
 @media (min-width: 375px) {
