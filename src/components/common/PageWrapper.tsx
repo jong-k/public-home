@@ -6,5 +6,5 @@ interface PageWrapperProps {
 }
 
 export default function PageWrapper({ children, className }: PageWrapperProps) {
-  return <main className={cn("px-page", "mx-auto", "py-20", className)}>{children}</main>;
+  return <main className={cn("px-page", "py-20", className)}>{children}</main>;
 }
