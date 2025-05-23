@@ -1,5 +1,10 @@
 import { cn } from "@/lib/utils";
 
-export default function PageWrapper({ children }: { children: React.ReactNode }) {
-  return <main className={cn("px-page", "mx-auto", "py-20")}>{children}</main>;
+interface PageWrapperProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function PageWrapper({ children, className }: PageWrapperProps) {
+  return <main className={cn("px-page", "mx-auto", "py-20", className)}>{children}</main>;
 }
