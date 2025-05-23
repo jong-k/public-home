@@ -1,3 +1,4 @@
+import PageWrapper from "@/components/common/PageWrapper";
 import { cn } from "@/lib/utils";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
@@ -18,7 +19,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         "prose-li:marker:text-black",
       )}
     >
-      {children}
+      <PageWrapper>{children}</PageWrapper>
     </div>
   );
 }
