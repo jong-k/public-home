@@ -1,7 +1,7 @@
 import PageWrapper from "@/components/common/PageWrapper";
 import { cn } from "@/lib/utils";
 
-export default function MdxLayout({ children }: { children: React.ReactNode }) {
+export default function PostsLayout({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={cn(
