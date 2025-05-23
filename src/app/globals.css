@@ -43,15 +43,12 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   /* breakpoints */
-  --breakpoint-sm: 375px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1200px;
-  --breakpoint-xl: 1440px;
+  --breakpoint-sm: var(--breakpoint-sm);
+  --breakpoint-md: var(--breakpoint-md);
+  --breakpoint-lg: var(--breakpoint-lg);
+  --breakpoint-xl: var(--breakpoint-xl);
   /* page margin */
-  --spacing-sm: 32px;
-  --spacing-md: 48px;
-  --spacing-lg: 64px;
-  --spacing-xl: 80px;
+  --spacing-page: var(--page-margin);
 }
 
 :root {
@@ -87,6 +84,40 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* breakpoints */
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
+}
+@media (max-width: 374px) {
+  :root {
+    --page-margin: 0;
+  }
+}
+
+@media (min-width: 375px) {
+  :root {
+    --page-margin: 32px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-margin: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --page-margin: 64px;
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --page-margin: 80px;
+  }
 }
 
 .dark {
