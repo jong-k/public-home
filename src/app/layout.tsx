@@ -4,6 +4,8 @@ import "./globals.css";
 import AppHeader from "../components/common/AppHeader";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
+import PageWrapper from "@/components/common/PageWrapper";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +30,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={cn(geistSans.variable, geistMono.variable, "antialiased")}>
         <AppHeader />
-        <main className={cn("px-8", "py-20")}>{children}</main>
+        <PageWrapper>{children}</PageWrapper>
         <Toaster />
       </body>
     </html>

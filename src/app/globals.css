@@ -89,11 +89,8 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1440px;
-}
-@media (max-width: 374px) {
-  :root {
-    --page-margin: 0;
-  }
+  /* page margin */
+  --page-margin: 0;
 }
 
 @media (min-width: 375px) {

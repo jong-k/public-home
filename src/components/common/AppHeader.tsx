@@ -47,6 +47,7 @@ export default function AppHeader() {
       className={cn(
         "py-4",
         "bg-background",
+        "top-0",
         "w-full",
         "fixed",
         "px-8",
