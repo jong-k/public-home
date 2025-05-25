@@ -4,6 +4,7 @@ import path from "path";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
 import MdxWrapper from "@/components/common/MdxWrapper";
 import { cn } from "@/lib/utils";
+import PostHeader from "@/app/posts/components/PostHeader";
 
 export default async function PostPage({
   params,
@@ -17,7 +18,7 @@ export default async function PostPage({
 
   return (
     <div>
-      <h2 className={cn("text-2xl", "font-bold")}>{data.title}</h2>
+      <PostHeader category={data.category} title={data.title} date={data.date} />
       <MdxWrapper className={cn("max-w-post")}>
         <MDXRemote source={content} />
       </MdxWrapper>
