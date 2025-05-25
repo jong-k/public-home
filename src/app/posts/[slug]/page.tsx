@@ -1,5 +1,9 @@
-import { readdir } from "fs/promises";
+import { readdir, readFile } from "fs/promises";
+import matter from "gray-matter";
 import path from "path";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
+import MdxWrapper from "@/components/common/MdxWrapper";
+import { cn } from "@/lib/utils";
 
 export default async function PostPage({
   params,
@@ -7,9 +11,18 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const { default: Post } = await import(`@/contents/${slug}.mdx`);
+  const filePath = path.join(process.cwd(), "src/contents", `${slug}.mdx`);
+  const fileContent = await readFile(filePath, "utf-8");
+  const { data, content } = matter(fileContent);
 
-  return <Post />;
+  return (
+    <div>
+      <h2 className={cn("text-2xl", "font-bold")}>{data.title}</h2>
+      <MdxWrapper className={cn("max-w-post")}>
+        <MDXRemote source={content} />
+      </MdxWrapper>
+    </div>
+  );
 }
 
 export async function generateStaticParams() {
