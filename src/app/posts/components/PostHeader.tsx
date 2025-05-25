@@ -9,7 +9,9 @@ interface PostHeaderProps {
 
 export default function PostHeader({ category, title, date }: PostHeaderProps) {
   return (
-    <div className={cn("flex", "flex-col", "gap-4", "items-center")}>
+    <section
+      className={cn("flex", "flex-col", "gap-4", "items-start", "sm:items-center")}
+    >
       <PostCategoryBadge category={category} />
       <h2 className={cn("leading-[110%]", "font-bold", "text-post-title")}>{title}</h2>
       <div>
@@ -22,6 +24,6 @@ export default function PostHeader({ category, title, date }: PostHeaderProps) {
           })}
         </span>
       </div>
-    </div>
+    </section>
   );
 }
