@@ -1,11 +1,8 @@
 import PostCategoryBadge from "@/components/base/PostCategoryBadge";
 import { cn } from "@/lib/utils";
+import type { Frontmatter } from "@/types/post";
 
-interface PostHeaderProps {
-  category: string;
-  title: string;
-  date: Date;
-}
+type PostHeaderProps = Omit<Frontmatter, "description">;
 
 export default function PostHeader({ category, title, date }: PostHeaderProps) {
   return (
