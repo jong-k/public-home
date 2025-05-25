@@ -43,6 +43,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   /* breakpoints */
+  --breakpoint-xs: var(--breakpoint-xs);
   --breakpoint-sm: var(--breakpoint-sm);
   --breakpoint-md: var(--breakpoint-md);
   --breakpoint-lg: var(--breakpoint-lg);
@@ -87,7 +88,8 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   /* breakpoints */
-  --breakpoint-sm: 375px;
+  --breakpoint-xs: 375px; /* 1 col */
+  --breakpoint-sm: 700px; /* 2 cols */
   --breakpoint-md: 768px;
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1440px;
