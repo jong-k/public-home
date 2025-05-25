@@ -50,6 +50,7 @@
   /* page margin */
   --spacing-page: var(--page-margin);
   --spacing-post: calc(var(--post-max-width) + var(--page-margin) * 2);
+  --text-post-title: var(--post-title-font-size);
 }
 
 :root {
@@ -94,6 +95,8 @@
   --page-margin: 0;
   /* max width */
   --post-max-width: 900px;
+  /* post title */
+  --post-title-font-size: clamp(2rem, 3.3vw, 2.8rem);
 }
 
 @media (min-width: 375px) {
