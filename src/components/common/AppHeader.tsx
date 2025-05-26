@@ -35,6 +35,16 @@ export default function AppHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY, isOpen]);
 
+  // 모바일 GNB 열려 있을 때 <body> overflow hidden 부여하여 스크롤 안되게함
+  useEffect(() => {
+    const body = document.body;
+    if (isOpen) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
   return (
     <>
       <header
