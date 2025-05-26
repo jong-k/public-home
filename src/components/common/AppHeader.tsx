@@ -1,24 +1,22 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { MailOpen } from "lucide-react";
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
-
-const NAV_ITEMS = [
-  {
-    label: "About",
-    href: "/about",
-  },
-];
-const EMAIL_ADDRESS = "fully.charged07@gmail.com";
+import DesktopGnb from "./DesktopGnb";
+import MobileMenuButton from "./MobileMenuButton";
+import MobileGnb from "./MobileGnb";
 
 export default function AppHeader() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (isOpen) {
+      setIsVisible(true);
+      return;
+    }
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -35,51 +33,45 @@ export default function AppHeader() {
     // 스크롤 이벤트가 preventDefault 되지 않도록 passive: true 추가
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isOpen]);
 
-  const handleContact = () => {
-    navigator.clipboard.writeText(EMAIL_ADDRESS);
-    toast.success(`메일 주소 ${EMAIL_ADDRESS} 를 클립보드에 복사했습니다`);
-  };
+  // 모바일 GNB 열려 있을 때 <body> overflow hidden 부여하여 스크롤 안되게함
+  useEffect(() => {
+    const body = document.body;
+    if (isOpen) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "auto";
+    }
+  }, [isOpen]);
 
   return (
-    <header
-      className={cn(
-        "py-4",
-        "bg-background",
-        "top-0",
-        "w-full",
-        "fixed",
-        "px-8",
-        "transition-transform duration-300",
-        isVisible ? "translate-y-0" : "-translate-y-full",
-      )}
-    >
-      <div className={cn("flex", "items-center", "justify-between")}>
-        <Link href="/" className={cn("text-2xl", "font-bold")}>
-          김종한
-        </Link>
-        <nav>
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={cn(
-                "transition-all",
-                "duration-200",
-                "hover:underline",
-                "hover:underline-offset-3",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <Button size="lg" className={cn("cursor-pointer")} onClick={handleContact}>
-          <MailOpen />
-          이메일로 문의하기
-        </Button>
-      </div>
-    </header>
+    <>
+      <header
+        className={cn(
+          "py-4",
+          "bg-background",
+          "top-0",
+          "w-full",
+          "fixed",
+          "px-8",
+          "transition-transform duration-300",
+          isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full",
+        )}
+      >
+        <div className={cn("flex", "items-center", "justify-between")}>
+          <Link href="/" className={cn("text-2xl", "font-bold")}>
+            김종한
+          </Link>
+          <div className={cn("hidden", "lg:block")}>
+            <DesktopGnb />
+          </div>
+          <div className={cn("lg:hidden")}>
+            <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
+        </div>
+      </header>
+      {isOpen && <MobileGnb />}
+    </>
   );
 }
