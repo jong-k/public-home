@@ -3,12 +3,19 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import DesktopGnb from "./DesktopGnb";
+import MobileGnb from "./MobileGnb";
 
 export default function AppHeader() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    if (isOpen) {
+      setIsVisible(true);
+      return;
+    }
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
@@ -25,7 +32,7 @@ export default function AppHeader() {
     // 스크롤 이벤트가 preventDefault 되지 않도록 passive: true 추가
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isOpen]);
 
   return (
     <header
@@ -37,7 +44,7 @@ export default function AppHeader() {
         "fixed",
         "px-8",
         "transition-transform duration-300",
-        isVisible ? "translate-y-0" : "-translate-y-full",
+        isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full",
       )}
     >
       <div className={cn("flex", "items-center", "justify-between")}>
@@ -46,6 +53,9 @@ export default function AppHeader() {
         </Link>
         <div className={cn("hidden", "lg:block")}>
           <DesktopGnb />
+        </div>
+        <div className={cn("lg:hidden")}>
+          <MobileGnb isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
     </header>
