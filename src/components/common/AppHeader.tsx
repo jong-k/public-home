@@ -44,7 +44,9 @@ export default function AppHeader() {
         <Link href="/" className={cn("text-2xl", "font-bold")}>
           김종한
         </Link>
-        <DesktopGnb />
+        <div className={cn("hidden", "lg:block")}>
+          <DesktopGnb />
+        </div>
       </div>
     </header>
   );
