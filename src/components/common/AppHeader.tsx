@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import DesktopGnb from "./DesktopGnb";
+import MobileMenuButton from "./MobileMenuButton";
 import MobileGnb from "./MobileGnb";
 
 export default function AppHeader() {
@@ -35,29 +36,32 @@ export default function AppHeader() {
   }, [lastScrollY, isOpen]);
 
   return (
-    <header
-      className={cn(
-        "py-4",
-        "bg-background",
-        "top-0",
-        "w-full",
-        "fixed",
-        "px-8",
-        "transition-transform duration-300",
-        isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full",
-      )}
-    >
-      <div className={cn("flex", "items-center", "justify-between")}>
-        <Link href="/" className={cn("text-2xl", "font-bold")}>
-          김종한
-        </Link>
-        <div className={cn("hidden", "lg:block")}>
-          <DesktopGnb />
+    <>
+      <header
+        className={cn(
+          "py-4",
+          "bg-background",
+          "top-0",
+          "w-full",
+          "fixed",
+          "px-8",
+          "transition-transform duration-300",
+          isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full",
+        )}
+      >
+        <div className={cn("flex", "items-center", "justify-between")}>
+          <Link href="/" className={cn("text-2xl", "font-bold")}>
+            김종한
+          </Link>
+          <div className={cn("hidden", "lg:block")}>
+            <DesktopGnb />
+          </div>
+          <div className={cn("lg:hidden")}>
+            <MobileMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
         </div>
-        <div className={cn("lg:hidden")}>
-          <MobileGnb isOpen={isOpen} setIsOpen={setIsOpen} />
-        </div>
-      </div>
-    </header>
+      </header>
+      {isOpen && <MobileGnb />}
+    </>
   );
 }
