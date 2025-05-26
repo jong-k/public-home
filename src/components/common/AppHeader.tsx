@@ -1,18 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { MailOpen } from "lucide-react";
 import { useEffect, useState } from "react";
-import { toast } from "sonner";
-
-const NAV_ITEMS = [
-  {
-    label: "About",
-    href: "/about",
-  },
-];
-const EMAIL_ADDRESS = "fully.charged07@gmail.com";
+import DesktopGnb from "./DesktopGnb";
 
 export default function AppHeader() {
   const [isVisible, setIsVisible] = useState(true);
@@ -37,11 +27,6 @@ export default function AppHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const handleContact = () => {
-    navigator.clipboard.writeText(EMAIL_ADDRESS);
-    toast.success(`메일 주소 ${EMAIL_ADDRESS} 를 클립보드에 복사했습니다`);
-  };
-
   return (
     <header
       className={cn(
@@ -59,28 +44,7 @@ export default function AppHeader() {
         <Link href="/" className={cn("text-2xl", "font-bold")}>
           김종한
         </Link>
-        <div className={cn("flex", "items-center", "gap-4")}>
-          <nav>
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "transition-all",
-                  "duration-200",
-                  "hover:underline",
-                  "hover:underline-offset-3",
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <Button size="lg" className={cn("cursor-pointer")} onClick={handleContact}>
-            <MailOpen />
-            이메일로 문의하기
-          </Button>
-        </div>
+        <DesktopGnb />
       </div>
     </header>
   );
