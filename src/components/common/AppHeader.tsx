@@ -59,26 +59,28 @@ export default function AppHeader() {
         <Link href="/" className={cn("text-2xl", "font-bold")}>
           김종한
         </Link>
-        <nav>
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={cn(
-                "transition-all",
-                "duration-200",
-                "hover:underline",
-                "hover:underline-offset-3",
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        <Button size="lg" className={cn("cursor-pointer")} onClick={handleContact}>
-          <MailOpen />
-          이메일로 문의하기
-        </Button>
+        <div className={cn("flex", "items-center", "gap-4")}>
+          <nav>
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={cn(
+                  "transition-all",
+                  "duration-200",
+                  "hover:underline",
+                  "hover:underline-offset-3",
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <Button size="lg" className={cn("cursor-pointer")} onClick={handleContact}>
+            <MailOpen />
+            이메일로 문의하기
+          </Button>
+        </div>
       </div>
     </header>
   );
