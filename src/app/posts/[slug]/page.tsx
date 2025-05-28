@@ -19,7 +19,7 @@ export default async function PostPage({
   return (
     <div>
       <PostHeader category={data.category} title={data.title} date={data.date} />
-      <MdxWrapper className={cn("max-w-post")}>
+      <MdxWrapper className={cn("max-w-post", "mx-auto")}>
         <MDXRemote source={content} />
       </MdxWrapper>
     </div>
