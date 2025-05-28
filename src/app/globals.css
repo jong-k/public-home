@@ -50,8 +50,9 @@
   --breakpoint-xl: 1200px;
   --breakpoint-2xl: 1440px;
   /* page margin */
-  --spacing-page: var(--page-margin);
-  --spacing-post: calc(var(--post-max-width) + var(--page-margin) * 2);
+  --spacing-page-margin: var(--page-margin);
+  --spacing-page: calc(var(--page-max-width) + var(--page-margin) * 2);
+  --spacing-post: var(--post-max-width);
   --text-post-title: var(--post-title-font-size);
 }
 
@@ -91,7 +92,8 @@
   /* page margin */
   --page-margin: 0;
   /* max width */
-  --post-max-width: 900px;
+  --page-max-width: 900px;
+  --post-max-width: 640px;
   /* post title */
   --post-title-font-size: clamp(2rem, 3.3vw, 2.8rem);
 }

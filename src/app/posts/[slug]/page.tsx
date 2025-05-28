@@ -12,14 +12,14 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const filePath = path.join(process.cwd(), "src/contents", `${slug}.mdx`);
+  const filePath = path.join(process.cwd(), "src/contents", `${slug}/index.mdx`);
   const fileContent = await readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
 
   return (
     <div>
       <PostHeader category={data.category} title={data.title} date={data.date} />
-      <MdxWrapper className={cn("max-w-post")}>
+      <MdxWrapper className={cn("max-w-post", "mx-auto")}>
         <MDXRemote source={content} />
       </MdxWrapper>
     </div>
@@ -30,11 +30,9 @@ export async function generateStaticParams() {
   const contentsDirectory = path.join(process.cwd(), "src/contents");
   const files = await readdir(contentsDirectory);
 
-  return files
-    .filter((file) => file.endsWith(".mdx"))
-    .map((file) => ({
-      slug: file.replace(/\.mdx$/, ""),
-    }));
+  return files.map((dir) => ({
+    slug: dir,
+  }));
 }
 
 export const dynamicParams = false;
