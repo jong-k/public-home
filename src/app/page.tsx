@@ -1,10 +1,11 @@
+import Link from "next/link";
 import PageWrapper from "@/components/common/PageWrapper";
-// import PostCard from "./components/PostCard";
 import { readdir, readFile } from "fs/promises";
 import path from "path";
 import matter from "gray-matter";
 import { cn } from "@/lib/utils";
 import type { PostMetadata } from "@/types/post";
+import PostCard from "./components/PostCard";
 
 export default async function Home() {
   const slugs = await readdir(path.join(process.cwd(), "src/contents"));
@@ -20,9 +21,9 @@ export default async function Home() {
   return (
     <PageWrapper className={cn("max-w-page", "mx-auto")}>
       {postMetadatas.map((post) => (
-        <pre className="bg-amber-200" key={post.title}>
-          {JSON.stringify(post, null, 2)}
-        </pre>
+        <Link href={`/posts/${post.slug}`} key={post.slug}>
+          <PostCard {...post} />
+        </Link>
       ))}
     </PageWrapper>
   );
