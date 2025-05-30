@@ -4,3 +4,7 @@ export interface Frontmatter {
   date: Date;
   description: string;
 }
+
+export interface PostMetadata extends Frontmatter {
+  slug: string;
+}
