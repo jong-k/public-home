@@ -19,7 +19,7 @@ export default async function Home() {
   );
 
   return (
-    <PageWrapper className={cn("max-w-page", "mx-auto")}>
+    <PageWrapper className={cn("max-w-page", "mx-auto", "pt-30")}>
       {postMetadatas.map((post) => (
         <Link href={`/posts/${post.slug}`} key={post.slug}>
           <PostCard {...post} />

@@ -17,8 +17,9 @@ export default function PostCard({ category, title, date, description }: PostMet
         "cursor-pointer",
       )}
     >
-      <p className={cn("text-sm", "text-gray-500")}>{category}</p>
-      <h2 className={cn("text-2xl", "font-bold")}>{title}</h2>
+      <p className={cn("text-sm")}>{category}</p>
+      <h2 className={cn("text-2xl", "font-bold", "my-4")}>{title}</h2>
+      <p className={cn("mb-4", "text-sm")}>{description}</p>
       <p className={cn("text-sm", "text-gray-500")}>
         {date.toLocaleDateString("ko-KR", {
           year: "numeric",
@@ -26,7 +27,6 @@ export default function PostCard({ category, title, date, description }: PostMet
           day: "numeric",
         })}
       </p>
-      <p className={cn("text-sm", "text-gray-500")}>{description}</p>
     </div>
   );
 }
