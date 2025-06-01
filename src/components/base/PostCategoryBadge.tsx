@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import type { PostCategory } from "@/types/post";
 
 interface PostCategoryBadgeProps {
-  category: string;
+  category: PostCategory;
 }
 
 export default function PostCategoryBadge({ category }: PostCategoryBadgeProps) {
@@ -15,6 +16,7 @@ export default function PostCategoryBadge({ category }: PostCategoryBadgeProps) 
           "rounded-lg",
           "border",
           "border-black",
+          "capitalize",
         )}
       >
         {category}

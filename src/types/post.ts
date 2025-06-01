@@ -1,5 +1,5 @@
 export interface Frontmatter {
-  category: string;
+  category: PostCategory;
   title: string;
   date: Date;
   description: string;
@@ -8,3 +8,5 @@ export interface Frontmatter {
 export interface PostMetadata extends Frontmatter {
   slug: string;
 }
+
+export type PostCategory = "lessons" | "troubleshooting" | "insight";
