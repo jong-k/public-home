@@ -1,5 +1,5 @@
 export interface Frontmatter {
-  category: string;
+  category: PostCategory;
   title: string;
   date: Date;
   description: string;
