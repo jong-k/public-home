@@ -8,3 +8,5 @@ export interface Frontmatter {
 export interface PostMetadata extends Frontmatter {
   slug: string;
 }
+
+export type PostCategory = "lessons" | "troubleshooting" | "insight";
