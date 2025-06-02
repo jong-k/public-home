@@ -17,7 +17,18 @@ export default function PostHeader({ category, title, date }: PostHeaderProps) {
       )}
     >
       <PostCategoryBadge category={category} />
-      <h2 className={cn("leading-[110%]", "font-bold", "text-post-title")}>{title}</h2>
+      <h2
+        className={cn(
+          "leading-[110%]",
+          "font-semibold",
+          "text-post-title",
+          "whitespace-normal",
+          "break-keep",
+          "text-center",
+        )}
+      >
+        {title}
+      </h2>
       <div>
         <span>
           {date.toLocaleDateString("ko-KR", {
