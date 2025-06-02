@@ -1,8 +1,8 @@
 export const NAV_ITEMS = [
   {
-    label: "About",
+    label: "🚧 About",
     href: "/about",
   },
 ];
 
-export const EMAIL_ADDRESS = "fully.charged07@gmail.com";
+export const EMAIL_ADDRESS = "dev.jonghankim@gmail.com";
