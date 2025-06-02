@@ -12,7 +12,7 @@ description: <함께 자라기> 책에서 읽은 애자일의 가치를 사내 �
 - 글쓴이: 김창준
 - 출판연도: 2018
 
-<img src="/images/clean-code/grow-together.jpg" alt="함께 자라기" className="mx-auto" />
+<img src="/images/agile-backoffice/grow-together.jpg" alt="함께 자라기" className="mx-auto" />
 
 #### 서론: 왜 애자일인가?
 

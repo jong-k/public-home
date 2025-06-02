@@ -16,8 +16,19 @@ export default function PostHeader({ category, title, date }: PostHeaderProps) {
         "sm:py-5",
       )}
     >
-      <PostCategoryBadge category={category} />
-      <h2 className={cn("leading-[110%]", "font-bold", "text-post-title")}>{title}</h2>
+      <PostCategoryBadge category={category} align="center" />
+      <h2
+        className={cn(
+          "leading-[110%]",
+          "font-semibold",
+          "text-post-title",
+          "whitespace-normal",
+          "break-keep",
+          "text-center",
+        )}
+      >
+        {title}
+      </h2>
       <div>
         <span>
           {date.toLocaleDateString("ko-KR", {
