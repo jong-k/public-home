@@ -3,11 +3,24 @@ import type { PostCategory } from "@/types/post";
 
 interface PostCategoryBadgeProps {
   category: PostCategory;
+  align?: "left" | "center" | "right";
 }
 
-export default function PostCategoryBadge({ category }: PostCategoryBadgeProps) {
+export default function PostCategoryBadge({
+  category,
+  align = "left",
+}: PostCategoryBadgeProps) {
   return (
-    <div className={cn("flex", "items-center", "justify-center")}>
+    <div
+      className={cn(
+        "flex",
+        "items-center",
+        "justify-center",
+        align === "left" && "justify-start",
+        align === "center" && "justify-center",
+        align === "right" && "justify-end",
+      )}
+    >
       <span
         className={cn(
           "text-sm",

@@ -18,9 +18,7 @@ export default function PostCard({ category, title, date, description }: PostMet
         "cursor-pointer",
       )}
     >
-      <div className={cn("flex", "justify-start")}>
-        <PostCategoryBadge category={category} />
-      </div>
+      <PostCategoryBadge category={category} />
       <h2 className={cn("text-2xl", "font-bold", "my-4")}>{title}</h2>
       <p className={cn("mb-4", "text-sm")}>{description}</p>
       <p className={cn("text-sm", "text-gray-500")}>

@@ -16,7 +16,7 @@ export default function PostHeader({ category, title, date }: PostHeaderProps) {
         "sm:py-5",
       )}
     >
-      <PostCategoryBadge category={category} />
+      <PostCategoryBadge category={category} align="center" />
       <h2
         className={cn(
           "leading-[110%]",
