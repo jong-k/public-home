@@ -11,7 +11,7 @@ export default async function Home() {
   const slugs = await readdir(path.join(process.cwd(), "src/contents"));
   const postMetadatas = await Promise.all(
     slugs.map(async (slug) => {
-      const filePath = path.join(process.cwd(), "src/contents", slug, "index.mdx");
+      const filePath = path.join(process.cwd(), "src/contents", slug, "README.md");
       const content = await readFile(filePath, "utf-8");
       const { data } = matter(content);
       return { slug, ...data } as PostMetadata;

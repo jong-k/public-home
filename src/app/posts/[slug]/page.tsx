@@ -12,7 +12,7 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const filePath = path.join(process.cwd(), "src/contents", `${slug}/index.mdx`);
+  const filePath = path.join(process.cwd(), "src/contents", slug, "README.md");
   const fileContent = await readFile(filePath, "utf-8");
   const { data, content } = matter(fileContent);
 
