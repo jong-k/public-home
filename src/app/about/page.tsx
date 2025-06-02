@@ -1,3 +1,5 @@
+import TempPage from "@/components/common/TempPage";
+
 export default function About() {
-  return <div>about page</div>;
+  return <TempPage />;
 }

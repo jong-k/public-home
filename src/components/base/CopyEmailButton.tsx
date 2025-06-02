@@ -13,7 +13,7 @@ export default function CopyEmailButton() {
   return (
     <Button size="lg" className={cn("cursor-pointer")} onClick={handleContact}>
       <MailOpen />
-      이메일로 문의하기
+      이메일로 문의
     </Button>
   );
 }
