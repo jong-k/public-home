@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import DesktopGnb from "./DesktopGnb";
 import MobileMenuButton from "./MobileMenuButton";
@@ -10,6 +11,12 @@ export default function AppHeader() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // 경로가 변경되면 헤더 닫기
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (isOpen) {
