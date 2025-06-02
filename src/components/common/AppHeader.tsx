@@ -55,6 +55,7 @@ export default function AppHeader() {
           "w-full",
           "fixed",
           "px-8",
+          "z-20",
           "transition-transform duration-300",
           isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full",
         )}
