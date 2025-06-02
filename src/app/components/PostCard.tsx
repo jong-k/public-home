@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { PostMetadata } from "@/types/post";
+import PostCategoryBadge from "@/components/base/PostCategoryBadge";
 
 export default function PostCard({ category, title, date, description }: PostMetadata) {
   return (
@@ -17,7 +18,9 @@ export default function PostCard({ category, title, date, description }: PostMet
         "cursor-pointer",
       )}
     >
-      <p className={cn("text-sm", "capitalize")}>{category}</p>
+      <div className={cn("flex", "justify-start")}>
+        <PostCategoryBadge category={category} />
+      </div>
       <h2 className={cn("text-2xl", "font-bold", "my-4")}>{title}</h2>
       <p className={cn("mb-4", "text-sm")}>{description}</p>
       <p className={cn("text-sm", "text-gray-500")}>
