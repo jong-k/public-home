@@ -8,6 +8,35 @@ import localFont from "next/font/local";
 export const metadata: Metadata = {
   title: "김종한 기술 블로그",
   description: "프론트엔드 개발자 김종한의 기술 블로그입니다",
+  openGraph: {
+    type: "website",
+    url: "https://kimjonghan.com/",
+    locale: "ko_KR",
+    title: "김종한 기술 블로그",
+    description: "프론트엔드 개발자 김종한의 기술 블로그입니다",
+    images: [
+      {
+        url: "https://kimjonghan.com/images/og-thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "김종한 기술 블로그",
+      },
+    ],
+    siteName: "김종한 기술 블로그",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "김종한 기술 블로그",
+    description: "프론트엔드 개발자 김종한의 기술 블로그입니다",
+    images: [
+      {
+        url: "https://kimjonghan.com/images/og-thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "김종한 기술 블로그",
+      },
+    ],
+  },
 };
 
 const pretendard = localFont({
