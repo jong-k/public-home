@@ -18,9 +18,15 @@ export default async function Home() {
     }),
   );
 
+  const sortedPostMetadatas = postMetadatas.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+
   return (
-    <PageWrapper className={cn("max-w-page", "mx-auto", "pt-30")}>
-      {postMetadatas.map((post) => (
+    <PageWrapper
+      className={cn("max-w-page", "mx-auto", "pt-30", "flex", "flex-col", "gap-8")}
+    >
+      {sortedPostMetadatas.map((post) => (
         <Link href={`/posts/${post.slug}`} key={post.slug}>
           <PostCard {...post} />
         </Link>
