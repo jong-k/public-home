@@ -15,20 +15,20 @@ export const metadata: Metadata = {
     other: [{ rel: "manifest", url: "/favicons/site.webmanifest" }],
   },
   openGraph: {
-    type: "website",
-    url: "https://kimjonghan.com/",
-    locale: "ko_KR",
     title: "김종한 기술 블로그",
     description: "프론트엔드 개발자 김종한의 기술 블로그입니다",
+    url: "https://kimjonghan.com/",
+    siteName: "김종한 기술 블로그",
     images: [
       {
-        url: "https://kimjonghan.com/images/og-thumbnail.png",
-        width: 1200,
-        height: 630,
+        url: "https://kimjonghan.com/images/opengraph-image.png",
+        width: 800,
+        height: 533,
         alt: "김종한 기술 블로그",
       },
     ],
-    siteName: "김종한 기술 블로그",
+    locale: "ko_KR",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
