@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     icon: "/favicons/favicon.ico",
     apple: "/favicons/apple-touch-icon.png",
     shortcut: "/favicons/favicon-32x32.png",
-    other: [{ rel: "manifest", url: "/favicons/site.webmanifest" }],
   },
   openGraph: {
     title: "김종한 기술 블로그",
