@@ -6,6 +6,22 @@ import MdxWrapper from "@/components/common/MdxWrapper";
 import { cn } from "@/lib/utils";
 import PostHeader from "@/app/posts/components/PostHeader";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const filePath = path.join(process.cwd(), "src/contents", slug, "README.md");
+  const fileContent = await readFile(filePath, "utf-8");
+  const { data } = matter(fileContent);
+
+  return {
+    title: `${data.title} | 김종한 기술 블로그`,
+    description: data.description,
+  };
+}
+
 export default async function PostPage({
   params,
 }: {
