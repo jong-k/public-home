@@ -5,4 +5,4 @@ export const NAV_ITEMS = [
   },
 ];
 
-export const EMAIL_ADDRESS = "dev.jonghankim@gmail.com";
+export const EMAIL_ADDRESS = "fully.charged07@gmail.com";
