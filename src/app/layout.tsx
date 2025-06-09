@@ -10,8 +10,12 @@ export const metadata: Metadata = {
   description: "프론트엔드 개발자 김종한의 기술 블로그입니다",
   icons: {
     icon: "/favicons/favicon.ico",
-    apple: "/favicons/apple-touch-icon.png",
     shortcut: "/favicons/favicon-32x32.png",
+    apple: "/favicons/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/favicons/apple-touch-icon.png",
+    },
   },
   openGraph: {
     title: "김종한 기술 블로그",
