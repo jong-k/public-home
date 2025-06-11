@@ -68,7 +68,10 @@ export default function AppHeader() {
         )}
       >
         <div className={cn("flex", "items-center", "justify-between")}>
-          <Link href="/" className={cn("text-2xl", "font-bold")}>
+          <Link href="/" className={cn("text-2xl", "font-bold", "hidden", "lg:block")}>
+            김종한 기술 블로그
+          </Link>
+          <Link href="/" className={cn("text-2xl", "font-bold", "lg:hidden")}>
             김종한
           </Link>
           <div className={cn("hidden", "lg:block")}>
