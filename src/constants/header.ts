@@ -1,6 +1,6 @@
 export const NAV_ITEMS = [
   {
-    label: "🚧 About",
+    label: "About",
     href: "/about",
   },
 ];
