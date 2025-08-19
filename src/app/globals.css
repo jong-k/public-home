@@ -6,9 +6,10 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-posts-page: var(--background-posts-page);
+  --color-background-inline-code: var(--background-inline-code);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -67,7 +68,9 @@
   --post-contents-font-size: 20px;
 
   /* Colors - Light Theme */
-  --background: #faf9f6;
+  --background: #f0eee6;
+  --background-posts-page: #faf9f6;
+  --background-inline-code: #e8e6dc;
   --foreground: #141413;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -131,6 +134,7 @@
 
 .dark {
   --background: oklch(0.145 0 0);
+  --background-inline-code: oklch(0.269 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -177,15 +181,21 @@
   .prose a {
     font-size: var(--post-contents-font-size);
   }
-  /* Shiki 코드 블록 스타일링 */
-  .prose pre {
-    @apply overflow-x-auto rounded-lg p-4;
-    font-size: 14px;
-    line-height: 1.5;
+  /* blockquote 인용 부호 제거 */
+  .prose blockquote {
+    quotes: none !important;
   }
-
-  /* Shiki 다크 테마로 고정 */
+  /* Shiki 코드 스니펫 스타일링 */
   .shiki {
     background-color: #0d1117 !important;
+    font-size: 1rem !important;
+  }
+  /* 인라인 코드 스타일링 */
+  code:not(.shiki code) {
+    @apply rounded bg-background-inline-code px-1 py-0.5;
+  }
+  code:not(.shiki code)::before,
+  code:not(.shiki code)::after {
+    content: none !important;
   }
 }
