@@ -6,10 +6,7 @@ interface PostCategoryBadgeProps {
   align?: "left" | "center" | "right";
 }
 
-export default function PostCategoryBadge({
-  category,
-  align = "left",
-}: PostCategoryBadgeProps) {
+export default function PostCategoryBadge({ category, align = "left" }: PostCategoryBadgeProps) {
   return (
     <div
       className={cn(
@@ -18,20 +15,10 @@ export default function PostCategoryBadge({
         "justify-center",
         align === "left" && "justify-start",
         align === "center" && "justify-center",
-        align === "right" && "justify-end",
+        align === "right" && "justify-end"
       )}
     >
-      <span
-        className={cn(
-          "text-sm",
-          "px-2",
-          "py-0.5",
-          "rounded-lg",
-          "border",
-          "border-black",
-          "capitalize",
-        )}
-      >
+      <span className={cn("text-sm", "px-2", "py-0.5", "rounded-lg", "border", "border-black", "capitalize")}>
         {category}
       </span>
     </div>

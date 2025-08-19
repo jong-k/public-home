@@ -1,9 +1,10 @@
 "use client";
+
 import { MailOpen } from "lucide-react";
-import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { EMAIL_ADDRESS } from "@/constants/header";
+import { cn } from "@/lib/utils";
+import { Button } from "../ui/button";
 
 export default function CopyEmailButton() {
   const handleContact = () => {

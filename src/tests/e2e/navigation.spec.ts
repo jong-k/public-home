@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("네비게이션 및 라우팅", () => {
   test("About 페이지가 정상적으로 로드된다", async ({ page }) => {

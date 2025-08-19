@@ -21,7 +21,7 @@ export default function MdxWrapper({ children, className }: MdxWrapperProps) {
         "prose-h5:text-xl",
         "prose-h6:text-lg",
         "prose-li:marker:text-black",
-        className,
+        className
       )}
     >
       {children}

@@ -1,6 +1,6 @@
+import PostCategoryBadge from "@/components/base/PostCategoryBadge";
 import { cn } from "@/lib/utils";
 import type { PostMetadata } from "@/types/post";
-import PostCategoryBadge from "@/components/base/PostCategoryBadge";
 
 export default function PostCard({ category, title, date, description }: PostMetadata) {
   return (
@@ -15,7 +15,7 @@ export default function PostCard({ category, title, date, description }: PostMet
         "hover:shadow-md",
         "transition-all",
         "duration-250",
-        "cursor-pointer",
+        "cursor-pointer"
       )}
     >
       <PostCategoryBadge category={category} />

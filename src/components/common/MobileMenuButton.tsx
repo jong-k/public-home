@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface MobileMenuButtonProps {
   isOpen: boolean;

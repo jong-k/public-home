@@ -6,16 +6,7 @@ type PostHeaderProps = Omit<Frontmatter, "description">;
 
 export default function PostHeader({ category, title, date }: PostHeaderProps) {
   return (
-    <section
-      className={cn(
-        "flex",
-        "flex-col",
-        "gap-4",
-        "items-start",
-        "sm:items-center",
-        "sm:py-5",
-      )}
-    >
+    <section className={cn("flex", "flex-col", "gap-4", "items-start", "sm:items-center", "sm:py-5")}>
       <PostCategoryBadge category={category} align="center" />
       <h2
         className={cn(
@@ -24,7 +15,7 @@ export default function PostHeader({ category, title, date }: PostHeaderProps) {
           "text-post-title",
           "whitespace-normal",
           "break-keep",
-          "text-center",
+          "text-center"
         )}
       >
         {title}
