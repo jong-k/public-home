@@ -6,8 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "npx serve@latest out",
+    "test:e2e": "npx playwright test",
     "lint": "next lint",
-    "test:e2e": "npx playwright test"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
