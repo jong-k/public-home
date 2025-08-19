@@ -2,6 +2,7 @@ import { readdir, readFile } from "fs/promises";
 import matter from "gray-matter";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote-client/rsc";
+import rehypeShiki from "@shikijs/rehype";
 import MdxWrapper from "@/components/common/MdxWrapper";
 import { cn } from "@/lib/utils";
 import PostHeader from "@/app/posts/components/PostHeader";
@@ -36,7 +37,21 @@ export default async function PostPage({
     <div>
       <PostHeader category={data.category} title={data.title} date={data.date} />
       <MdxWrapper className={cn("max-w-post", "mx-auto", "text-foreground")}>
-        <MDXRemote source={content} />
+        <MDXRemote
+          source={content}
+          options={{
+            mdxOptions: {
+              rehypePlugins: [
+                [
+                  rehypeShiki,
+                  {
+                    theme: "github-dark",
+                  },
+                ],
+              ],
+            },
+          }}
+        />
       </MdxWrapper>
     </div>
   );
