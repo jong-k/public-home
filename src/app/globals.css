@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-background-posts-page: var(--background-posts-page);
+  --color-background-inline-code: var(--background-inline-code);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -70,6 +70,7 @@
   /* Colors - Light Theme */
   --background: #f0eee6;
   --background-posts-page: #faf9f6;
+  --background-inline-code: #e8e6dc;
   --foreground: #141413;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -183,16 +184,18 @@
   .prose blockquote {
     quotes: none !important;
   }
-
-  /* Shiki 코드 블록 스타일링 */
-  .prose pre {
-    @apply overflow-x-auto rounded-lg p-4;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  /* Shiki 다크 테마로 고정 */
+  /* Shiki 코드 스니펫 스타일링 */
   .shiki {
     background-color: #0d1117 !important;
+    font-size: 1rem !important;
+  }
+  /* 인라인 <code> 스타일링 (.shiki의 자식이 아닌 code만) */
+  code:not(.shiki code) {
+    @apply rounded bg-background-inline-code px-1 py-0.5;
+  }
+  /* code 엘리먼트의 백틱 제거 */
+  code:not(.shiki code)::before,
+  code:not(.shiki code)::after {
+    content: none !important;
   }
 }
