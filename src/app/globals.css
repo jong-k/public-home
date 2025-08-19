@@ -53,13 +53,22 @@
   --spacing-page-margin: var(--page-margin);
   --spacing-page: calc(var(--page-max-width) + var(--page-margin) * 2);
   --spacing-post: var(--post-max-width);
-  --text-post-title: var(--post-title-font-size);
 }
 
 :root {
+  /* Layout */
   --radius: 0.625rem;
-  --background: #f0eee6;
-  --foreground: oklch(0.145 0 0); /* #0a0a0a */
+  --page-margin: 0;
+  --page-max-width: 900px;
+  --post-max-width: 640px;
+
+  /* Typography */
+  --post-title-font-size: clamp(2rem, 3.3vw, 2.8rem);
+  --post-contents-font-size: 20px;
+
+  /* Colors - Light Theme */
+  --background: #faf9f6;
+  --foreground: #141413;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -76,11 +85,15 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+
+  /* Chart Colors */
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
+
+  /* Sidebar Colors */
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -89,13 +102,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  /* page margin */
-  --page-margin: 0;
-  /* max width */
-  --page-max-width: 900px;
-  --post-max-width: 640px;
-  /* post title */
-  --post-title-font-size: clamp(2rem, 3.3vw, 2.8rem);
 }
 
 @media (min-width: 375px) {
@@ -107,6 +113,7 @@
 @media (min-width: 768px) {
   :root {
     --page-margin: 48px;
+    --post-contents-font-size: 18px;
   }
 }
 
@@ -162,5 +169,12 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* 마크다운 컨텐츠의 텍스트 */
+  .prose p,
+  .prose li,
+  .prose blockquote,
+  .prose a {
+    font-size: var(--post-contents-font-size);
   }
 }
