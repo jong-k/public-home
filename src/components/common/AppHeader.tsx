@@ -13,6 +13,7 @@ export default function AppHeader() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const isPostsPage = pathname.startsWith("/posts");
 
   // 경로가 변경되면 헤더 닫기
   useEffect(() => {
@@ -58,13 +59,13 @@ export default function AppHeader() {
       <header
         className={cn(
           "py-4",
-          "bg-background",
           "top-0",
           "w-full",
           "fixed",
           "px-8",
           "z-20",
           "transition-transform duration-300",
+          isPostsPage ? "bg-background-posts-page" : "bg-background",
           isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
