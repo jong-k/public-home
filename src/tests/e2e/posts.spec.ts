@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 test.describe("블로그 포스트 페이지", () => {
   test("개별 포스트 페이지가 정상적으로 로드된다", async ({ page }) => {
@@ -22,9 +22,7 @@ test.describe("블로그 포스트 페이지", () => {
     await expect(title).toBeVisible();
 
     // 메타 정보 확인 (날짜 등)
-    const metaInfo = page.locator(
-      'time, [data-testid="post-date"], span:has-text("2025")',
-    );
+    const metaInfo = page.locator('time, [data-testid="post-date"], span:has-text("2025")');
     if ((await metaInfo.count()) > 0) {
       await expect(metaInfo.first()).toBeVisible();
     }

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import AppHeader from "../components/common/AppHeader";
+import localFont from "next/font/local";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import localFont from "next/font/local";
+import "./globals.css";
+import AppHeader from "../components/common/AppHeader";
 
 export const metadata: Metadata = {
   title: "김종한 기술 블로그",

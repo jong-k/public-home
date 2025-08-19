@@ -11,7 +11,7 @@ export default function TempPage() {
         "h-screen",
         "text-2xl",
         "font-bold",
-        "translate-y-[-80px]",
+        "translate-y-[-80px]"
       )}
     >
       🚧 준비중인 페이지입니다 🚧

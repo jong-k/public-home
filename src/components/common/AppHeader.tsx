@@ -1,11 +1,12 @@
 "use client";
-import { cn } from "@/lib/utils";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 import DesktopGnb from "./DesktopGnb";
-import MobileMenuButton from "./MobileMenuButton";
 import MobileGnb from "./MobileGnb";
+import MobileMenuButton from "./MobileMenuButton";
 
 export default function AppHeader() {
   const [isVisible, setIsVisible] = useState(true);
@@ -64,7 +65,7 @@ export default function AppHeader() {
           "px-8",
           "z-20",
           "transition-transform duration-300",
-          isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full",
+          isVisible ? "translate-y-0" : isOpen ? "translate-y-0" : "-translate-y-full"
         )}
       >
         <div className={cn("flex", "items-center", "justify-between")}>
