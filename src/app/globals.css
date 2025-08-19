@@ -6,6 +6,7 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-posts-page: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -67,7 +68,8 @@
   --post-contents-font-size: 20px;
 
   /* Colors - Light Theme */
-  --background: #faf9f6;
+  --background: #f0eee6;
+  --background-posts-page: #faf9f6;
   --foreground: #141413;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
