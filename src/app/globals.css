@@ -179,6 +179,11 @@
   .prose a {
     font-size: var(--post-contents-font-size);
   }
+  /* blockquote 인용 부호 제거 */
+  .prose blockquote {
+    quotes: none !important;
+  }
+
   /* Shiki 코드 블록 스타일링 */
   .prose pre {
     @apply overflow-x-auto rounded-lg p-4;
