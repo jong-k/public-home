@@ -12,7 +12,7 @@ export default function AppHeader() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname(); // 경로가 변경될 때마다 컴포넌트 리렌더링
   const isPostsPage = pathname.startsWith("/posts");
 
   // 경로가 변경되면 헤더 닫기
