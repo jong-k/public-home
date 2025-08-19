@@ -134,6 +134,7 @@
 
 .dark {
   --background: oklch(0.145 0 0);
+  --background-inline-code: oklch(0.269 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -189,11 +190,10 @@
     background-color: #0d1117 !important;
     font-size: 1rem !important;
   }
-  /* 인라인 <code> 스타일링 (.shiki의 자식이 아닌 code만) */
+  /* 인라인 코드 스타일링 */
   code:not(.shiki code) {
     @apply rounded bg-background-inline-code px-1 py-0.5;
   }
-  /* code 엘리먼트의 백틱 제거 */
   code:not(.shiki code)::before,
   code:not(.shiki code)::after {
     content: none !important;
