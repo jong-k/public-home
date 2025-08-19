@@ -177,4 +177,15 @@
   .prose a {
     font-size: var(--post-contents-font-size);
   }
+  /* Shiki 코드 블록 스타일링 */
+  .prose pre {
+    @apply overflow-x-auto rounded-lg p-4;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Shiki 다크 테마로 고정 */
+  .shiki {
+    background-color: #0d1117 !important;
+  }
 }
