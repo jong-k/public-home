@@ -9,4 +9,4 @@ export interface PostMetadata extends Frontmatter {
   slug: string;
 }
 
-export type PostCategory = "lessons" | "troubleshooting" | "insight";
+export type PostCategory = "lessons" | "troubleshooting" | "insight" | "portfolio";
