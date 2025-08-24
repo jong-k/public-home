@@ -9,7 +9,6 @@
   --color-background-posts-page: var(--background-posts-page);
   --color-background-inline-code: var(--background-inline-code);
   --color-foreground: var(--foreground);
-
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -54,6 +53,8 @@
   --spacing-page-margin: var(--page-margin);
   --spacing-page: calc(var(--page-max-width) + var(--page-margin) * 2);
   --spacing-post: var(--post-max-width);
+  /* text size */
+  --text-post-title: var(--post-title-font-size);
 }
 
 :root {
@@ -64,7 +65,7 @@
   --post-max-width: 640px;
 
   /* Typography */
-  --post-title-font-size: clamp(2rem, 3.3vw, 2.8rem);
+  --post-title-font-size: clamp(1.75rem, 3vw, 2.25rem);
   --post-contents-font-size: 20px;
 
   /* Colors - Light Theme */
