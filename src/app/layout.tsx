@@ -49,9 +49,10 @@ export const metadata: Metadata = {
 };
 
 const pretendard = localFont({
-  src: "../fonts/PretendardVariable.woff2",
+  src: "../../public/fonts/PretendardVariable.woff2",
   display: "swap",
   weight: "45 920",
+  variable: "--font-pretendard",
 });
 
 export default function RootLayout({
